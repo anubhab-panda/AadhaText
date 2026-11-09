@@ -1,0 +1,11 @@
+# Aadhar to Json using openbharatocr
+# Setup Python , Flask to get started
+# Even pytesseract is required for Ocr
+
+# Library Readiness
+python -m pip install python-dateutil
+python -m pip install opencv-python==4.6.0.66
+python -m pip install numpy==1.26.4
+pip install flask
+pip install openbharatocr
+# openbharatocr requires Python 3.11

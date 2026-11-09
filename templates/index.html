@@ -1,0 +1,75 @@
+ 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aadhaar OCR Extractor</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            max-width: 500px;
+            margin: auto;
+            border-radius: 12px;
+        }
+
+        button {
+            background: #007bff;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <h2>Aadhaar Card Text Extractor</h2>
+
+        <form method="POST" enctype="multipart/form-data">
+
+            <input type="file"
+                   name="file"
+                   accept=".jpg,.jpeg,.png"
+                   required>
+
+            <br><br>
+
+            <button type="submit">
+                Extract Details
+            </button>
+
+        </form>
+
+        {% if error %}
+            <p style="color:red">{{ error }}</p>
+        {% endif %}
+
+        {% if data %}
+
+            <h3>Extracted Information</h3>
+
+            <p>Name: {{ data.name }}</p>
+
+            <p>DOB: {{ data.dob }}</p>
+
+            <p>Gender: {{ data.gender }}</p>
+
+            <p>Aadhaar Number:
+                {{ data.aadhaar_number }}
+            </p>
+
+        {% endif %}
+
+    </div>
+</body>
+</html>
